@@ -13,7 +13,16 @@ m + (S n) = S (m + n)
 (*) :: Nat -> Nat -> Nat
 m * O = O
 m * (S n) = m + (m * n)
+-- exponencial
+(^) :: Nat -> Nat -> Nat
+m ^ O = S O
+m ^ S O = m
+m ^ (S n) = m * (m ^ n)
 -- dobro
 double :: Nat -> Nat
 double O = O
 double (S m) = S (S (double m))
+-- predecessor
+pred :: Nat -> Nat
+pred O = O
+pred (S m) = m
