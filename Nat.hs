@@ -26,3 +26,7 @@ double (S m) = S (S (double m))
 pred :: Nat -> Nat
 pred O = O
 pred (S m) = m
+-- factorial
+fact :: Nat -> Nat
+fact O = S O
+fact (S m) = S m * fact m
