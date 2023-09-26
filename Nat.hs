@@ -10,3 +10,6 @@ data Nat = O | S Nat
 m + O = m
 m + (S n) = S (m + n)
 -- multiplicação
+(*) :: Nat -> Nat -> Nat
+m * O = O
+m * (S n) = m + (m * n)
