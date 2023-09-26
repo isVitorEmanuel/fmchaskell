@@ -13,3 +13,7 @@ m + (S n) = S (m + n)
 (*) :: Nat -> Nat -> Nat
 m * O = O
 m * (S n) = m + (m * n)
+-- dobro
+double :: Nat -> Nat
+double O = O
+double (S m) = S (S (double m))
