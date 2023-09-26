@@ -30,3 +30,8 @@ pred (S m) = m
 fact :: Nat -> Nat
 fact O = S O
 fact (S m) = S m * fact m
+-- fibonacci
+fib :: Nat -> Nat
+fib O = O
+fib (S O) = S O
+fib (S (S n)) = fib (S n) + fib n
