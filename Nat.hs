@@ -45,3 +45,9 @@ max :: Nat -> Nat -> Nat
 max O m = m
 max m O = m
 max (S m) (S n) = S (max m n)
+-- div
+-- quot
+-- rem
+-- gcd
+-- lcm
+
