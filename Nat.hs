@@ -56,7 +56,6 @@ max (S m) (S n) = S (max m n)
   -- m < n     = (O, n)
   --otherwise = let (q', r') = div (m - n, n)
                 -- in (S q', r')
-
 -- quot
 -- rem
 -- gcd
