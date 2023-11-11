@@ -30,7 +30,7 @@ True `xou` True = False
 False `xou` False = False
 _ `xou` _ = True
 
--- Se_bla, então bli
+-- Condicional
 if_then_else :: Bool -> Nat -> Nat -> Nat
 if_then_else True n _ = n
 if_then_else False _ n = n
