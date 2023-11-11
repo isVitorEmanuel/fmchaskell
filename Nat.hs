@@ -82,8 +82,13 @@ quot n m = fst(div n m)
 rem :: Nat -> Nat -> Nat
 rem n m = snd(div n m)
 
--- gcd (???)
+-- gcd (Euclides!!!)
+gcd :: Nat -> Nat -> Nat
+gcd n O = n
+gcd n m = gcd n (rem n m)
+
 -- lcm (???)
+-- Não sei qual seria essa função :(
 
 -- leq (Menor que)
 leq :: Nat -> Nat -> Bool
