@@ -3,7 +3,7 @@
 module Nat where
 
 import Prelude hiding
-    (O, S, (+), (*), (^), (-), double, pred, fact, fib, quot, min, max, monus, gcd, lcm, div, rem, if_then_else)
+    ((+), (*), (^), (-), double, pred, fact, fib, quot, min, max, monus, div, quot, rem, gcd, lcm, leq, geq, ev, od, isMul3, isZero, divides, compare, if_then_else)
 
 data Nat = O | S Nat
     deriving (Eq , Show)
@@ -130,3 +130,10 @@ divides :: Nat -> Nat -> Bool
 divides n m =
     if rem n m == S O then False
     else True
+
+-- compare (Questão da Prova de IRI 2.1)
+compare :: Nat -> Nat -> Nat
+compare O O = O
+compare O _ = S O
+compare _ O = S(S O)
+compare (S n) (S m) = compare n m
