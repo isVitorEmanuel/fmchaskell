@@ -1,6 +1,8 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Redundant if" #-}
 module Nat where
 
-import Prelude hiding 
+import Prelude hiding
     (O, S, (+), (*), (^), (-), double, pred, fact, fib, quot, min, max, monus, gcd, lcm, div, rem, if_then_else)
 
 data Nat = O | S Nat
@@ -63,24 +65,24 @@ max (S m) (S n) = S (max m n)
 
 -- monus (Uma Subtração Diferente)
 monus :: Nat -> Nat -> Nat
-monus m O = m
-monus m (S n) = pred (monus m n)
+monus n O = n
+monus n (S m) = pred (monus n m)
 
 -- div (Divisão) 
 div :: Nat -> Nat -> (Nat, Nat)
 div _ O = error "Zero is not divisor!"
-div n m = 
-    if leq n m then (O, n) 
+div n m =
+    if leq n m then (O, n)
     else (S n', m')
         where (n', m') = div (monus n m) m
 
 -- quot (Quociente)
 quot :: Nat -> Nat -> Nat
-quot n m = fst(div n m)
+quot n m = fst (div n m)
 
 -- rem (Resto da Divisão)
 rem :: Nat -> Nat -> Nat
-rem n m = snd(div n m)
+rem n m = snd (div n m)
 
 -- gcd (Euclides!!!)
 gcd :: Nat -> Nat -> Nat
@@ -122,3 +124,9 @@ isMul3 _ = False
 isZero :: Nat -> Bool
 isZero O = True
 isZero _ = False
+
+-- dividies (Divide)
+divides :: Nat -> Nat -> Bool
+divides n m =
+    if rem n m == S O then False
+    else True
